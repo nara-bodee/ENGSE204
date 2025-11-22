@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class lab_11 {
 
 	public static int sumArray (int[] numbers) {
-		int sum = 0;
-		for (int n : numbers) { //สำหรับ (n) แต่ละตัวที่อยู๋ใน (numbers)
-			sum += n; 
+		int s = 0;
+		for (int n : numbers) {
+			s += n; 
 		}
-		return sum;
+		return s;
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -24,9 +24,9 @@ public class lab_11 {
 			System.out.println("Enter Number"+(i+1));
 			Number[i] = input.nextInt();
 		}
-		int result = sumArray(Number);
+		int r = sumArray(Number);
 		
-		System.out.println(result);
+		System.out.println(r);
 		
 		input.close();
 	}
