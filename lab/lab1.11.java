@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class lab_11 {
 
 	public static int sumArray (int[] numbers) {
-		int sum=0;
+		int sum = 0;
 		for (int n : numbers) { //สำหรับ (n) แต่ละตัวที่อยู๋ใน (numbers)
 			sum += n; 
 		}
@@ -18,13 +18,13 @@ public class lab_11 {
 		System.out.println("Enter N");
 		int N = input.nextInt();
 		
-		int[] array = new int[N];
+		int[] Number = new int[N];
 		
 		for (int i = 0;i<N;i++) {
 			System.out.println("Enter Number"+(i+1));
-			array[i] = input.nextInt();
+			Number[i] = input.nextInt();
 		}
-		int result = sumArray(array);
+		int result = sumArray(Number);
 		
 		System.out.println(result);
 		
