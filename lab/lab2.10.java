@@ -9,7 +9,7 @@ class Product{
 		this.name = name;
         this.price = price;
 	}
-	public double getPrice() {
+    public double getPrice() {
         return price;
     }
 }
@@ -26,41 +26,46 @@ class ShoppingCart{
 		if (itemCount < items.length) {
 			items[itemCount] = p;
 			itemCount++;
-		} else {
-            System.out.println("ShoppingCart Is Full");
-        }
+		}
 	}
 	public double calculateTotalPrice() {
         double totalPrice = 0.0;
         
         for (int i = 0; i < itemCount; i++) {
-        	totalPrice += items[i].getPrice();
+        	totalPrice += items[i].getPrice(); 
         }
         return totalPrice;
         }
 }
-public class lab2_10 {
 
+public class lab2_10 {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
+		System.out.println("Enter N");
 		int N = 0;
 		if (input.hasNextInt()) {
              N = input.nextInt();
-		} else {
-			return;
 		}
+        input.nextLine();
+        
 		ShoppingCart cart = new ShoppingCart();
+		
 		for (int i = 0; i < N; i++) {
+			System.out.println("Enter Product Name "+ (i+1));
 			String productName = input.nextLine();
-			double productPrice = input.nextDouble();
+			System.out.println("Enter Price "+ (i+1));
+            double productPrice = input.nextDouble();
+            
+            if (i < N - 1) {
+                input.nextLine();
+            }
 			
 			Product newProduct = new Product(productName, productPrice);
-			
 			cart.addProduct(newProduct);
 		}
+		
 		double finalPrice = cart.calculateTotalPrice();
-		System.out.printf("%.1f%n", finalPrice);
+		System.out.printf("Total Price : %.1f%n", finalPrice);
 		input.close();
 	}
 }
