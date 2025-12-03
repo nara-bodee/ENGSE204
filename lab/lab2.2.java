@@ -9,6 +9,10 @@ class Student{
 		this.studentID = studentID;
 		this.name = name;
 	}
+	public void displayInfo() {
+        System.out.println("Student ID :"+studentID);
+        System.out.println("Name :"+name);
+    }
 }	
 public class lab2_2 {
 
@@ -26,9 +30,7 @@ public class lab2_2 {
 		
 		Student std1 = new Student(studentID, name);
 		
-		System.out.println(studentID);
-		System.out.println(name);
-		
+		std1.displayInfo();
 		
 	}
 
